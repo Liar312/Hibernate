@@ -22,10 +22,10 @@ class HibernateRunnerTest {
     @Test
     void checkReflectionAPI() throws IllegalAccessException, SQLException {
         User user = User.builder()
-                .username("Ivan")
-                .lastname("Ivanov")
-                .birthDate(LocalDate.of(2002, 1, 29))
-                .age(20)
+//                .username("Ivan")
+//                .lastname("Ivanov")
+//                .birthDate(LocalDate.of(2002, 1, 29))
+//                .age(20)
                 .build();
 
         String sql = """ 

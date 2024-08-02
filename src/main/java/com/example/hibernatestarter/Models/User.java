@@ -1,5 +1,6 @@
 package com.example.hibernatestarter.Models;
 
+import com.example.hibernatestarter.converter.BirthDayConverter;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -25,10 +26,11 @@ public class User {
     private String firstname;
     @Column(name="lastname")
     private String lastname;
+
+    @Convert(converter = BirthDayConverter.class)
     @Column(name = "birth_date")
-    private LocalDate birthDate;
-    @Column(name="age")
-    private Integer age;
+    private BirthDay birthDate;//заносим новый тип данных на основании которого будем делать конвертер
+
     @Enumerated(EnumType.STRING)//чтобы в бд наши роли заносились в строковом виде а не в виде цифр
     private Role role;
 }
