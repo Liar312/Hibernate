@@ -29,4 +29,6 @@ public class User {
     private LocalDate birthDate;
     @Column(name="age")
     private Integer age;
+    @Enumerated(EnumType.STRING)//чтобы в бд наши роли заносились в строковом виде а не в виде цифр
+    private Role role;
 }

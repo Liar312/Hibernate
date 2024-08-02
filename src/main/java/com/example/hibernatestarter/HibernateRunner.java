@@ -1,5 +1,6 @@
 package com.example.hibernatestarter;
 
+import com.example.hibernatestarter.Models.Role;
 import com.example.hibernatestarter.Models.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -28,6 +29,7 @@ public class HibernateRunner {
                     .lastname("Ivanov")
                     .birthDate(LocalDate.of(2002, 1, 29))
                     .age(20)
+                    .role(Role.ADMIN)
                     .build();
             session.save(user);
             session.getTransaction().commit();//rollback для отката
