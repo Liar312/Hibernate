@@ -8,11 +8,11 @@ import java.sql.Date;
 import java.util.Optional;
 
 @Converter(autoApply = true)//помечаем как конвертер к использованию
-public class BirthDayConverter implements AttributeConverter<BirthDay, Date>{
+public class BirthDayConverter implements AttributeConverter<BirthDay,Date>{
     @Override
     public Date convertToDatabaseColumn(BirthDay birthDay) {
         return Optional.ofNullable(birthDay)
-                .map(BirthDay::birthDate)
+                .map(BirthDay::birthDate)//тут мы установили полученный birthDay из прошлого шага как на вход в конструктор(сложно понимаеца)
                 .map(Date::valueOf)
                 .orElse(null);
     }
